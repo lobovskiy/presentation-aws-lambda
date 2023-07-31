@@ -1,40 +1,825 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/blue-yellow.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>AWS Lambda</h1>
+          <p>Serverless compute service</p>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+          <aside class="notes">
+            Welcome to the presentation about Amazon Web Services serverless
+            comute service which is called AWS Lambda
+          </aside>
+        </section>
+        <section>
+          <section>
+            <h2>
+              What is
+              <span
+                ><img
+                  style="vertical-align: top; translate: 0 -4px"
+                  width="150"
+                  src="./assets/img/pngwing.com.png"
+                  alt=""
+              /></span>
+            </h2>
+            <p class="r-fit-text">
+              Amazon Web Services is a highly reliable, scalable,<br />
+              low-cost infrastructure platform in the cloud.
+            </p>
+            <p class="r-fit-text">
+              It offers a broad set of global cloud-based products including:
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                font-size: 0.7em;
+              "
+            >
+              <ul>
+                <li>compute</li>
+                <li>storage</li>
+                <li>databases</li>
+                <li>analytics</li>
+                <li>networking</li>
+                <li>mobile</li>
+              </ul>
+              <ul>
+                <li>developer tools</li>
+                <li>management tools</li>
+                <li>IoT</li>
+                <li>security</li>
+                <li>enterprise applications</li>
+              </ul>
+            </div>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+            <aside class="notes">
+              A paramount solution that provides features and services which
+              power the cloud infrastructure for businesses and individuals
+              alike.<br />
+              <br />
+              Collection of global cloud-based products that enable seamless
+              development and deployment.
+            </aside>
+          </section>
+          <section>
+            <iframe
+              width="896"
+              height="499"
+              allowfullscreen=""
+              allow="fullscreen; accelerometer; geolocation; gyroscope; camera; encrypted-media; microphone; midi"
+              data-src="https://www.youtube.com/embed/a9__D53WsUs?enablejsapi=1"
+            ></iframe>
+            <h3>A short AWS video introduction</h3>
+
+            <aside class="notes">A short official video presentation</aside>
+          </section>
+          <section>
+            <h3>
+              Providers of Cloud Infrastructure<br />
+              and Platform Services (CIPS)
+            </h3>
+            <img
+              src="./assets/img/gartner-magic-quadrant-for-cloud-infrastructure-and-platform-services-850.jpg"
+              alt=""
+            />
+
+            <aside class="notes">
+              Magic quadrant s a series of market research reports to
+              demonstrate market trends<br />
+              <br />
+              Completeness of vision – Reflects the vendor's innovation, and
+              whether the vendor drives or follows the market.<br />
+              <br />
+              Ability to execute – Summarizes factors such as the vendor's
+              financial viability, market responsiveness, product development,
+              sales channels and customer base.<br />
+              <br />
+              AWS is considered to have the greatest breadth and depth of
+              capabilities of any provider in the mark
+            </aside>
+          </section>
+          <section>
+            <h3>
+              A common system architecture<br />
+              that is built with AWS
+            </h3>
+            <img src="./assets/img/real project.png" alt="" />
+
+            <aside class="notes">
+              The most important AWS services by evaluating a common system
+              architecture, and what components are needed to build it with
+              AWS.<br />
+              <br />
+              AWS ecosystem provides services for all layers of product
+              development, and also its deployment, management, security,
+              evolving and so on.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate style="max-height: 100%">
+            <h1>AWS compute services</h1>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                margin-top: 2em;
+              "
+            >
+              <div>
+                <h2 style="font-size: xx-large">
+                  Virtual server<br />instances
+                </h2>
+                <img src="./assets/img/ec2.svg" alt="" />
+                <p style="font-size: x-large">
+                  EC2<br />
+                  (Elastic Compute Cloud)
+                </p>
+              </div>
+              <div>
+                <h2 style="font-size: xx-large">
+                  Serverless<br />compute services
+                </h2>
+                <img src="./assets/img/lambda.svg" alt="" />
+                <p style="font-size: x-large">Lambda</p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              The two main AWS compute services which provides different ways to
+              applications deployment.<br />
+              <br />
+              Closer look to the serverless variant - Lambda
+            </aside>
+          </section>
+          <section
+            style="height: 100%"
+            data-auto-animate
+            data-background-video="https://api-files.sproutvideo.com/file/a79dddbe1319e6c32e/f0d9940060ae8d3c/1080.mp4#t=0.001"
+            data-background-video-loop
+            data-preload
+          >
+            <h2 style="font-size: 1.5em">Serverless<br />compute services</h2>
+            <p style="margin-top: 1em">
+              allows developers to focus on core business logic for the apps
+              they are developing instead of worrying about managing servers.
+            </p>
+            <h2
+              class="r-fit-text"
+              style="margin-top: 1em; color: rgb(238, 114, 35)"
+            >
+              Run code without thinking about servers or clusters
+            </h2>
+            <p style="margin-top: 2em; font-size: 0.7em">
+              With serverless, the cloud vendor takes care of all routine
+              infrastructure management and maintenance.
+            </p>
+
+            <aside class="notes">
+              The short definition and explanation of what Serverless compute
+              services are.<br />
+              <br />
+              Advantages:<br />
+              - no server management is necessary<br />
+              - serverless architectures are inherently scalable<br />
+              - quick deployments and updates are possible<br />
+              - code can run closer to the end-user, decreasing latency and more
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h2 style="font-size: 1.5em">Serverless<br />compute services</h2>
+            <img
+              width="500"
+              src="./assets/img/serverless-architecture.webp"
+              alt=""
+            />
+            <p style="font-size: 0.6em">
+              AWS is known for introducing Functions as a Service (FaaS) for the
+              first time, also known as Serverless technology.
+            </p>
+
+            <aside class="notes">
+              Developers can create and use functions that trigger specific
+              business logic, completely abstracting the underlying
+              infrastructure.<br />
+              <br />
+              Serverless architecture is essentially virtualizing runtime and
+              operational management through a third-party provider.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">AWS Lambda</h1>
+
+            <aside class="notes">Characteristics of AWS Lambda</aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">AWS Lambda</h1>
+            <ul style="font-size: 0.7em">
+              <li>
+                Run code without provisioning or managing infrastructure. Simply
+                write and upload code as a .zip file or container image.
+              </li>
+            </ul>
+
+            <aside class="notes">Characteristics of AWS Lambda</aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">AWS Lambda</h1>
+            <ul style="font-size: 0.7em">
+              <li>
+                Run code without provisioning or managing infrastructure. Simply
+                write and upload code as a .zip file or container image.
+              </li>
+              <li style="margin-top: 1em">
+                Automatically respond to code execution requests at any scale,
+                from a dozen events per day to hundreds of thousands per second.
+              </li>
+            </ul>
+
+            <aside class="notes">Characteristics of AWS Lambda</aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">AWS Lambda</h1>
+            <ul style="font-size: 0.7em">
+              <li>
+                Run code without provisioning or managing infrastructure. Simply
+                write and upload code as a .zip file or container image.
+              </li>
+              <li style="margin-top: 1em">
+                Automatically respond to code execution requests at any scale,
+                from a dozen events per day to hundreds of thousands per second.
+              </li>
+              <li style="margin-top: 1em">
+                Save costs by paying only for the compute time you use - by
+                per-millisecond - instead of provisioning infrastructure upfront
+                for peak capacity.
+              </li>
+            </ul>
+
+            <aside class="notes">Characteristics of AWS Lambda</aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">AWS Lambda</h1>
+            <ul style="font-size: 0.7em">
+              <li>
+                Run code without provisioning or managing infrastructure. Simply
+                write and upload code as a .zip file or container image.
+              </li>
+              <li style="margin-top: 1em">
+                Automatically respond to code execution requests at any scale,
+                from a dozen events per day to hundreds of thousands per second.
+              </li>
+              <li style="margin-top: 1em">
+                Save costs by paying only for the compute time you use - by
+                per-millisecond - instead of provisioning infrastructure upfront
+                for peak capacity.
+              </li>
+              <li style="margin-top: 1em">
+                Optimize code execution time and performance with the right
+                function memory size. Respond to high demand in double-digit
+                milliseconds with Provisioned Concurrency.
+              </li>
+            </ul>
+
+            <aside class="notes">Characteristics of AWS Lambda</aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">How it works</h1>
+            <img src="./assets/img/file processing.png" alt="" />
+            <h3 style="font-size: 0.8em">File processing</h3>
+
+            <aside class="notes">Examples of AWS Lambda working</aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">How it works</h1>
+            <img src="./assets/img/web application.png" alt="" />
+            <h3 style="font-size: 0.8em">Web application</h3>
+
+            <aside class="notes">Examples of AWS Lambda working</aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">How it works</h1>
+            <img src="./assets/img/mobile backend.png" alt="" />
+            <h3 style="font-size: 0.8em">Mobile backend</h3>
+
+            <aside class="notes">Examples of AWS Lambda working</aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Features</h1>
+
+            <aside class="notes">Features of AWS Lambda</aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Features</h1>
+            <ol style="font-size: 0.7em">
+              <li>
+                Supports popular programming languages like Java, Go,
+                PowerShell, Node.js, C#, Python, and Ruby.
+              </li>
+            </ol>
+
+            <aside class="notes">
+              Features of AWS Lambda<br />
+              1. Footprint of languages supported by Lambda
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Features</h1>
+            <ol style="font-size: 0.7em">
+              <li>
+                Supports popular programming languages like Java, Go,
+                PowerShell, Node.js, C#, Python, and Ruby.
+              </li>
+              <li style="margin-top: 1em">
+                You author code using your favorite development environment or
+                via the console.
+              </li>
+            </ol>
+
+            <aside class="notes">
+              Features of AWS Lambda<br />
+              2. You can author your code using your favorite development
+              environment locally, but now you're only responsible for the code
+              you write, making sure it's secure.
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Features</h1>
+            <ol style="font-size: 0.7em">
+              <li>
+                Supports popular programming languages like Java, Go,
+                PowerShell, Node.js, C#, Python, and Ruby.
+              </li>
+              <li style="margin-top: 1em">
+                You author code using your favorite development environment or
+                via the console.
+              </li>
+              <li style="margin-top: 1em">
+                Lambda can execute your code in response to events.
+              </li>
+            </ol>
+
+            <aside class="notes">
+              Features of AWS Lambda<br />
+              3. For example, Lambda could be triggered when a file is uploaded
+              to S3
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Features</h1>
+            <ol style="font-size: 0.7em">
+              <li>
+                Supports popular programming languages like Java, Go,
+                PowerShell, Node.js, C#, Python, and Ruby.
+              </li>
+              <li style="margin-top: 1em">
+                You author code using your favorite development environment or
+                via the console.
+              </li>
+              <li style="margin-top: 1em">
+                Lambda can execute your code in response to events.
+              </li>
+              <li style="margin-top: 1em">
+                Lambda functions have a 15-minute timeout.
+              </li>
+            </ol>
+
+            <aside class="notes">
+              Features of AWS Lambda<br />
+              4. Lambda is typically not good for processes that run longer than
+              15 minutes
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1 style="font-size: 1.5em">Creating a Lambda</h1>
+            <video
+              controls
+              src="./assets/video/1 creating a lambda function.mp4"
+            ></video>
+
+            <aside class="notes">
+              Screencast of creatind Lambda through AWS Management Console<br />
+              <br />
+              1. Navigate to the AWS Management Console<br />
+              2. Type Lambda in the seatch panel, or expand all services, go to
+              the compute section and find Lambda<br />
+              3. Click on create function<br />
+              4. Start with a simple hello world example<br />
+              5. Give function a name<br />
+              6. Leave the runtime as node.js and leave all of the other
+              defaults
+            </aside>
+          </section>
+          <section>
+            <h1 style="font-size: 1.5em">Testing a Lambda</h1>
+            <video
+              controls
+              src="./assets/video/2 testing a lambda function.mp4"
+            ></video>
+
+            <aside class="notes">
+              Screencast of running and testing Lambda through AWS Management
+              Console by executing JS function<br />
+              <br />
+              1. Start from the code tab<br />
+              2. Open a sample index.js file<br />
+              3. Replace that with a custom code<br />
+              4. Configure a test event and create it<br />
+              5. Deploy the changes test it
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Pricing model</h1>
+            <p>
+              <span style="color: #ffffff">You are charged based on the</span>
+              <span style="color: #ffa500">duration</span><br />
+              <span style="color: #ffffff">and</span>
+              <span style="color: #ffa500">number of requests</span>
+            </p>
+
+            <aside class="notes">
+              Two main pricing models of AWS Lambda you can choose
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Pricing model</h1>
+            <p>
+              <span style="color: #ffffff">You are charged based on the</span>
+              <span style="color: #ffa500">duration</span><br />
+              <span style="color: #ffffff">and</span>
+              <span style="color: #ffa500">number of requests</span>
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                margin-top: 2em;
+              "
+            >
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Compute time
+                </h2>
+                <p style="font-size: x-large">
+                  Pay only for compute time used — there is no charge if your
+                  code is not running.
+                </p>
+              </div>
+              <div style="width: 100%"></div>
+              <div style="width: 100%"></div>
+            </div>
+
+            <aside class="notes">
+              There is no charge if your code is not running and the duration is
+              calculated from the time your code begins until it returns or
+              otherwise terminates
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Pricing model</h1>
+            <p>
+              <span style="color: #ffffff">You are charged based on the</span>
+              <span style="color: #ffa500">duration</span><br />
+              <span style="color: #ffffff">and</span>
+              <span style="color: #ffa500">number of requests</span>
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                margin-top: 2em;
+              "
+            >
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Compute time
+                </h2>
+                <p style="font-size: x-large">
+                  Pay only for compute time used — there is no charge if your
+                  code is not running.
+                </p>
+              </div>
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Request count
+                </h2>
+                <p style="font-size: x-large">
+                  A request is counted each time it starts execution. Test
+                  invokes in the console count as well.
+                </p>
+              </div>
+              <div style="width: 100%"></div>
+            </div>
+
+            <aside class="notes">
+              Even if you're just testing it using the console, that will count
+              as well.
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Pricing model</h1>
+            <p>
+              <span style="color: #ffffff">You are charged based on the</span>
+              <span style="color: #ffa500">duration</span><br />
+              <span style="color: #ffffff">and</span>
+              <span style="color: #ffa500">number of requests</span>
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                margin-top: 2em;
+              "
+            >
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Compute time
+                </h2>
+                <p style="font-size: x-large">
+                  Pay only for compute time used — there is no charge if your
+                  code is not running.
+                </p>
+              </div>
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Request count
+                </h2>
+                <p style="font-size: x-large">
+                  A request is counted each time it starts execution. Test
+                  invokes in the console count as well.
+                </p>
+              </div>
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">Always free</h2>
+                <p style="font-size: x-large">
+                  The free usage tier includes 1 million free requests each
+                  month.
+                </p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              The free usage tier includes 1 million free requests each month,
+              and that's even after the free tier ends.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Use cases</h1>
+
+            <aside class="notes">Four described Lambda use cases</aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Use cases</h1>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                margin-top: 2em;
+              "
+            >
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Process data at scale
+                </h2>
+                <p style="font-size: medium">
+                  Execute code at the capacity you need, as you need it. Scale
+                  to match your data volume automatically and enable custom
+                  event triggers.
+                </p>
+              </div>
+              <div style="width: 100%"></div>
+            </div>
+
+            <aside class="notes">
+              Four described Lambda use cases<br />
+              <br />
+              1. Process data at scale
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Use cases</h1>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                margin-top: 2em;
+              "
+            >
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Process data at scale
+                </h2>
+                <p style="font-size: medium">
+                  Execute code at the capacity you need, as you need it. Scale
+                  to match your data volume automatically and enable custom
+                  event triggers.
+                </p>
+              </div>
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Run interactive web and mobile backends
+                </h2>
+                <p style="font-size: medium">
+                  Combine AWS Lambda with other AWS services to create secure,
+                  stable, and scalable online experiences.
+                </p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              Four described Lambda use cases<br />
+              <br />
+              2. Run interactive web and mobile backends
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Use cases</h1>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                margin-top: 2em;
+              "
+            >
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Process data at scale
+                </h2>
+                <p style="font-size: medium">
+                  Execute code at the capacity you need, as you need it. Scale
+                  to match your data volume automatically and enable custom
+                  event triggers.
+                </p>
+              </div>
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Run interactive web and mobile backends
+                </h2>
+                <p style="font-size: medium">
+                  Combine AWS Lambda with other AWS services to create secure,
+                  stable, and scalable online experiences.
+                </p>
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                margin-top: 2em;
+              "
+            >
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Enable powerful ML insights
+                </h2>
+                <p style="font-size: medium">
+                  Preprocess data before feeding it to your machine learning
+                  (ML) model. With Amazon Elastic File System (EFS) access, AWS
+                  Lambda handles infrastructure management and provisioning to
+                  simplify scaling.
+                </p>
+              </div>
+              <div style="width: 100%"></div>
+            </div>
+
+            <aside class="notes">
+              Four described Lambda use cases<br />
+              <br />
+              3. Enable powerful machine learning insights
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h1 style="font-size: 1.5em">Use cases</h1>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                margin-top: 2em;
+              "
+            >
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Process data at scale
+                </h2>
+                <p style="font-size: medium">
+                  Execute code at the capacity you need, as you need it. Scale
+                  to match your data volume automatically and enable custom
+                  event triggers.
+                </p>
+              </div>
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Run interactive web and mobile backends
+                </h2>
+                <p style="font-size: medium">
+                  Combine AWS Lambda with other AWS services to create secure,
+                  stable, and scalable online experiences.
+                </p>
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 2em;
+                justify-content: center;
+                margin-top: 2em;
+              "
+            >
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Enable powerful ML insights
+                </h2>
+                <p style="font-size: medium">
+                  Preprocess data before feeding it to your machine learning
+                  (ML) model. With Amazon Elastic File System (EFS) access, AWS
+                  Lambda handles infrastructure management and provisioning to
+                  simplify scaling.
+                </p>
+              </div>
+              <div style="width: 100%">
+                <h2 style="font-size: xx-large; color: #ffa500">
+                  Create event-driven applications
+                </h2>
+                <p style="font-size: medium">
+                  Build event-driven functions for easy communication between
+                  decoupled services. Reduce costs by running applications
+                  during times of peak demand without crashing or
+                  over-provisioning resources.
+                </p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              Four described Lambda use cases<br />
+              <br />
+              4. Create event-driven applications
+            </aside>
+          </section>
+        </section>
+        <section>
+          <h1>Thank you for watching!</h1>
+          <p>AWS Lambda</p>
+
+          <aside class="notes">
+            You've just watched a presentation about AWS Lambda - a serverless
+            compute service that lets you run code without managing servers<br />
+            Thanks for watching!
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
